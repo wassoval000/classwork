@@ -1,0 +1,23 @@
+$(document).ready(function(){
+
+    $('.clickMe').click(function(){
+        $('.hideMe').animate({
+            fontSize: '100px',
+        },'slow');
+        $('.showMe').slideDown(slow);
+    });
+
+//FUNCTIONS COVERED
+/*
+    .show()
+    .hide()
+    .toggle()
+    .fadeIn()
+    .fadeOut()
+    .fadeToggle()
+    .fadeTo()
+    .on()
+    .slideDown()
+    .slideUp()
+    .slideToggle()
+*/

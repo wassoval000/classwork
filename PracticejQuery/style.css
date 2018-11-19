@@ -1,0 +1,19 @@
+section{
+    font-size: 72px;
+}
+button{
+    font-size: 72px;
+}
+.showMe{
+    display: none;
+
+.hideMe{
+    position: fixed;
+    background-color: red;
+    width: 100px;
+    height: 100px;
+}
+.clickMe{
+    font-size: 72px;
+    border: dashed 4px red;
+}
