@@ -1,10 +1,7 @@
 $(document).ready(function(){
 
     $('.clickMe').click(function(){
-        $('.hideMe').animate({
-            fontSize: '100px',
-        },'slow');
-        $('.showMe').slideDown(slow);
+        $('.showMe').hide("slow").slideDown(3000).css("background-color","lightgreen").fadeOut(5000).fadeIn(4000).css("color","white");
     });
 
 //FUNCTIONS COVERED
