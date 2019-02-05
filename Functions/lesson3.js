@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $("#button").click(function(){
-        calculateMidpoint();
+        output();
     })
 
 });
@@ -25,4 +25,18 @@ var midpoint = function(x1, y1, x2, y2){
     var midpointY = (y1+y2)/2;
 
     $("#output").append("The midpoint is: (" +midpointX+" , " +midpointY+")" );
+}
+
+var input = function(a){
+
+    var userInput = $(a).val();
+
+    return userInput;
+
+}
+
+var output = function(){
+
+    $("#output").text("Hello. The first number is " + input('#input1') + ". And the second is " + input('#input2'));
+
 }
