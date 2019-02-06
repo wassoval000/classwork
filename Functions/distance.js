@@ -8,7 +8,7 @@ $(document).ready(function(){
 
 var input = function(a){
 
-    var userInput = pareseInt($(a).val());
+    var userInput = parseInt($(a).val());
 
     return userInput;
 
@@ -38,8 +38,8 @@ var output = function(){
 
     var distance3 = distance(input('#input1'),input('#input2'),input('#input5'),input('#input6'))
 
-    var perimeter = perimeter(distance1,distance2,distance3);
+    var triPerimeter = perimeter(distance1,distance2,distance3);
 
-    $('#output').text("The perimeter is " + perimeter);
-    
+    $('#output').text("The perimeter is " + triPerimeter);
+
 }
