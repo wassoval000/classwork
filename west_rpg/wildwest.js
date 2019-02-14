@@ -8,22 +8,21 @@ $(document).ready(function(){
 
     if($('#button1').text()===O1){
         updateNarrative(N2);
-        $('#button1').text(O3);
-        $('#button2').text(O4);
-        $('#button3').text(O5);
+        updateButtons(O3,O4,O5);
         $('#button3').show();
     }
-    else if($('#button1').text()===O3){
+    else if($('#button1').text()===O3 && hasBow === true){
         updateNarrative(N5);
-        $('#button1').text(O81);
+        updateButtons(O81,null,null);
         $('#button2').hide();
-        $('#button3').hide();
     }
     else if($('#button1').text()===O6){
         updateNarrative(N6);
-        $('#button1').text(O82);
+        updateButtons(O82,null,null);
         $('#button2').hide();
-        $('#button3').hide();
+    }
+    else if($('#button1').text()===O3){
+        updateNarrative("Did not get bow.");
     }
 
    })
@@ -31,8 +30,7 @@ $(document).ready(function(){
    $('#button2').click(function(){
        if($('#button2').text()===O2){
            updateNarrative(N3);
-           $('#button1').text(O6);
-           $('#button2').text(O7);
+           updateButtons(O6,O7);
        }
        else if($('#button2').text()===O7){
             updateNarrative(N6);
@@ -41,10 +39,10 @@ $(document).ready(function(){
             $('#button3').hide();
        }
        else if($('#button2').text()===O4){
-        updateNarrative(N5);
-        $('#button1').text(O81);
-        $('#button2').hide();
-        $('#button3').hide();
+        updateNarrative("He went to his bags to get the the pancake mix, and found his favorite weapon, a super slicer arrow thingy 4000, bow.");
+        $('#button1').text(O3);
+        updateButtons(O3,"Runs to target practice. ", null);
+        hasBow = true;
        }
    })
 
@@ -75,6 +73,7 @@ var O6 = "heats his pork and beans. ";
 var O7 = "purges the Wild West of all evil-doers. ";
 var O81 = "shoots the arrow through Mr. Pig. ";
 var O82 = "fires, vaporizing Mr. Pig. ";
+var hasBow = false;
 
 var updateNarrative = function(a){
 
@@ -87,5 +86,15 @@ var createButton = function(id, text){
     console.log("Button CREATED");
 
     return "<button type=button id=" + id + ">" + text + "</button>";
+
+}
+
+var updateButtons = function(a,b,c){
+
+    $('#button3').hide();
+    $('#button1').text(a);
+    $('#button2').text(b);
+    $('#button3').text(c);
+
 
 }
